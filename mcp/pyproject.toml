@@ -1,0 +1,17 @@
+[project]
+name = "mcp-server-on-raspi"
+version = "0.1.0"
+description = "A MCP server project"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [ "mcp>=1.1.0",]
+[[project.authors]]
+name = "daikw"
+email = "daikw@yak-shaver.com"
+
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project.scripts]
+mcp-server-on-raspi = "mcp_server_on_raspi:main"
