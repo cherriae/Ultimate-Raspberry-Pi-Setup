@@ -21,9 +21,36 @@
 - Install via `install.sh`
 
 ## Karakeep
-- Uncomment OPENAI_KEY and paste key
-- Change SECRET_KEYS in .env
+- Uncomment `OPENAI_KEY` and paste key
+- Change `SECRET_KEYS` in .env
 
 ## MCP
 - Run: `chmod +x ./install.sh`
 - Install MCP-Server via `install.sh`
+
+## Pi-hole
+- Run: `chmod +x ./install.sh`
+- Install Pi-hole via `install.sh`
+
+## PiVPN
+- Run: `chmod +x ./install.sh`
+- Install PiVPN via `install.sh`
+
+## Homarr
+- Change `SECRET_ENCRYPTION_KEY` using `openssl rand -hex 32`
+- Install via docker: `docker compose up -d`
+
+## Portainer
+- Run: `chmod +x ./install.sh`
+- Install Portainer via `install.sh`
+
+## Cockpit
+- Run: `chmod +x ./install.sh`
+- Install Cockpit via `install.sh`
+
+# NginxProxyManager
+- Install using docker: `docker compose up -d`
+
+# Grafana
+- Run: `chmod +x ./install.sh`
+- Install Grafana via `install.sh`
