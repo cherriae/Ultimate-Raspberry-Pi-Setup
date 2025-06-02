@@ -1,20 +1,25 @@
 # Raspberry Pi build
 
-|     App           | Ports Used       |
-| ----------------- | ---------------- |
-| Docmost           | 3000             |
-| Filebrowser       | 8080, 80, 443    |
-| Glance            | 8888             |
-| InfluxDB          | 8086             |
-| Karakeep          | 3001             |
-| MCP               | 3500             |
-| Pi-hole           | 5555             |
-| PiVPN             | 51820            |
-| Homarr            | 7575             |
-| Portainer         | 9000, 9443, 8001 |
-| Cockpit           | 9090             |
-| NginxProxyManager | 81, 80, 443      |
-| Grafana           | 3100             |
+| App               | Ports Used       | Space Required     |
+| ----------------- | ---------------- | ------------------ |
+| Docmost           | 3000             | 200 MB             |
+| Filebrowser       | 8080, 80, 443    | 100 MB + Files     |
+| Glance            | 8888             | 50 MB              |
+| InfluxDB          | 8086             | 500 MB + Data      |
+| Karakeep          | 3001             | 100 MB             |
+| MCP               | 3500             | ? MB               |
+| Pi-hole           | 5555             | 100 MB             |
+| PiVPN             | 51820            | 50 MB              |
+| Homarr            | 7575             | 100 MB             |
+| Portainer         | 9000, 9443, 8001 | 150 MB             |
+| Cockpit           | 9090             | 100 MB             |
+| NginxProxyManager | 81, 80, 443      | 300 MB             |
+| Grafana           | 3100             | 250 MB + Data      |
+| qBittorent        | 8050, 6881       | 100 MB + Downloads |
+| Home Assistant    | 8123             | 500 MB + Data      |
+| NextCloud         | 8081             | 500 MB + Files     |
+
+> Estimate total: 3.25 GB not including other files
 
 ## Docker
 - Run: `chmod +x ./install.sh`
@@ -64,9 +69,18 @@
 - Run: `chmod +x ./install.sh`
 - Install Cockpit via `install.sh`
 
-# NginxProxyManager
+## NginxProxyManager
 - Install using docker: `docker compose up -d`
 
-# Grafana
+## Grafana
 - Run: `chmod +x ./install.sh`
 - Install Grafana via `install.sh`
+
+## qBittorent 
+- Install using docker: `docker compose up -d`
+
+## NextCloud
+- Install using docker: `docker compose up -d`
+
+## Home Assistant
+- Install using docker: `docker compose up -d`
