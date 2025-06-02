@@ -1,5 +1,21 @@
 # Raspberry Pi build
 
+|     App           | Ports Used       |
+| ----------------- | ---------------- |
+| Docmost           | 3000             |
+| Filebrowser       | 8080, 80, 443    |
+| Glance            | 8888             |
+| InfluxDB          | 8086             |
+| Karakeep          | 3001             |
+| MCP               | 3500             |
+| Pi-hole           | 5555             |
+| PiVPN             | 51820            |
+| Homarr            | 7575             |
+| Portainer         | 9000, 9443, 8001 |
+| Cockpit           | 9090             |
+| NginxProxyManager | 81, 80, 443      |
+| Grafana           | 3100             |
+
 ## Docker
 - Run: `chmod +x ./install.sh`
 - Install docker via `install.sh`

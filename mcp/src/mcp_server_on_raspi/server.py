@@ -147,18 +147,28 @@ async def handle_call_tool(
         )
     ]
 
-async def main():
-    # Run the server using stdin/stdout streams
-    async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
-        await server.run(
-            read_stream,
-            write_stream,
-            InitializationOptions(
-                server_name="mcp-server-on-raspi",
-                server_version="0.1.0",
-                capabilities=server.get_capabilities(
-                    notification_options=NotificationOptions(),
-                    experimental_capabilities={},
-                ),
+async def main(use_tcp=False, host='0.0.0.0', port=3500):
+    if use_tcp:
+        async def handle_client(reader, writer):
+            await run_server(reader, writer)
+        server_instance = await asyncio.start_server(handle_client, host, port)
+        print(f"Serving on {host}:{port}")
+        async with server_instance:
+            await server_instance.serve_forever()
+    else:
+        async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
+            await run_server(read_stream, write_stream)
+
+async def run_server(reader, writer):
+    await server.run(
+        reader,
+        writer,
+        InitializationOptions(
+            server_name="mcp-server-on-raspi",
+            server_version="0.1.0",
+            capabilities=server.get_capabilities(
+                notification_options=NotificationOptions(),
+                experimental_capabilities={},
             ),
-        )
+        ),
+    )
