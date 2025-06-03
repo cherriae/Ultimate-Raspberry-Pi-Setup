@@ -1,11 +1,29 @@
+version: '3.8'
+
 services:
   app:
     image: 'docker.io/jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
-      - '80:80'
-      - '81:81'
-      - '443:443'
+      - '8090:80'   # HTTP proxy port
+      - '81:81'     # Admin interface
+      - '8443:443'  # HTTPS proxy port
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
+
+  db:
+    image: 'docker.io/library/mariadb:10'
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 'npm'
+      MYSQL_DATABASE: 'npm'
+      MYSQL_USER: 'npm'
+      MYSQL_PASSWORD: 'npm'
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+volumes:
+  data:
+  letsencrypt:
+  mysql:

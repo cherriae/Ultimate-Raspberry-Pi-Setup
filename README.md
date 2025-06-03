@@ -3,8 +3,8 @@
 | App               | Ports Used       | Space Required     |
 | ----------------- | ---------------- | ------------------ |
 | Docmost           | 3000             | 200 MB             |
-| Filebrowser       | 8080, 80, 443    | 100 MB + Files     |
-| Glance            | 8888             | 50 MB              |
+| Filebrowser       | 8000, 80, 443    | 100 MB + Files     |
+| Glance            | 8080             | 50 MB              |
 | InfluxDB          | 8086             | 500 MB + Data      |
 | Karakeep          | 3001             | 100 MB             |
 | MCP               | 3500             | ? MB               |
