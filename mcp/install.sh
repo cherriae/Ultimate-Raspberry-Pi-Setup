@@ -28,6 +28,7 @@ uvicorn
 pydantic
 requests
 aiofiles
+mcp
 EOF
 fi
 
@@ -48,7 +49,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=$REPO_DIR
-ExecStart=/usr/bin/python3 $REPO_DIR/server.py
+ExecStart=/usr/bin/python3 $REPO_DIR/src/mcp_server_on_raspi/server.py
 Restart=always
 RestartSec=10
 Environment=PATH=/usr/bin:/usr/local/bin
