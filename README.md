@@ -8,18 +8,18 @@
 | InfluxDB          | 8086             | 500 MB + Data      |
 | Karakeep          | 3001             | 100 MB             |
 | MCP               | 3500             | ? MB               |
-| Pi-hole           | 5555             | 100 MB             |
+| Pi-hole           | 5555, 80         | 100 MB             |
 | PiVPN             | 51820            | 50 MB              |
 | Homarr            | 7575             | 100 MB             |
 | Portainer         | 9000, 9443, 8001 | 150 MB             |
 | Cockpit           | 9090             | 100 MB             |
-| NginxProxyManager | 81, 80, 443      | 300 MB             |
+| NginxProxyManager | 8090, 81, 8443   | 300 MB             |
 | Grafana           | 3100             | 250 MB + Data      |
 | qBittorent        | 8050, 6881       | 100 MB + Downloads |
 | Home Assistant    | 8123             | 500 MB + Data      |
 | NextCloud         | 8081             | 500 MB + Files     |
 
-> Estimate total: 3.25 GB not including other files
+> Estimate total: 15 GB not including other files
 
 ## Docker
 - Run: `chmod +x ./install.sh`
