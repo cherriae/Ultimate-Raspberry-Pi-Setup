@@ -1,6 +1,6 @@
 - name: Home
   # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
-  # hide-desktop-navigation: true
+  hide-desktop-navigation: true
   columns:
     - size: small
       widgets:
@@ -12,14 +12,11 @@
           collapse-after: 3
           cache: 12h
           feeds:
-            - url: https://selfh.st/rss/
-              title: selfh.st
-            - url: https://ciechanow.ski/atom.xml
-            - url: https://www.joshwcomeau.com/rss.xml
-              title: Josh Comeau
-            - url: https://samwho.dev/rss.xml
-            - url: https://ishadeed.com/feed.xml
-              title: Ahmad Shadeed
+            - url: https://chiefdelphi.com/c/chiefdelphi/first.rss
+              title: Chief Delphi FIRST Updates
+            - url: https://chiefdelphi.com/c/chiefdelphi/technical.rss
+              title: Chief Delphi Technicals
+            
 
         - type: twitch-channels
           channels:
@@ -53,12 +50,15 @@
             - type: reddit
               subreddit: selfhosted
               show-thumbnails: true
+            - type: reddit
+              subreddit: frc
+              show-thumbnails: true
 
     - size: small
       widgets:
         - type: weather
-          location: London, United Kingdom
-          units: metric # alternatively "imperial"
+          location: New York, United States
+          units: imperial # alternatively "imperial"
           hour-format: 12h # alternatively "24h"
           # Optionally hide the location from being displayed in the widget
           # hide-location: true
@@ -83,6 +83,5 @@
           # token: ...
           repositories:
             - glanceapp/glance
-            - go-gitea/gitea
-            - immich-app/immich
-            - syncthing/syncthing
+            - wpilibsuite/allwpilib
+            
